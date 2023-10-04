@@ -14,7 +14,7 @@ node_2 = node;
 if (node == NULL || node_2 == NULL)
 	return (0);
 
-while (node_2 != NULL)
+while (node != NULL && node_2 != NULL && node_2->next != NULL)
 {
 
 node_2 = node_2->next->next;
