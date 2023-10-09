@@ -6,4 +6,3 @@ while number <= 99:
     else:
         print("{:02d}".format(number))
     number = number + 1
-    
