@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-# We use i for the first digit and j for the second
-for i in range(0, 9):
-    for j in range(i + 1, 10):
-        if i is not 8 or j is not 9:
-            print("{:d}{:d}".format(i, j), end=", ")
-        else:
-            print("{:d}{:d}".format(i, j))
+digit1 = 0
+digit2 = 1
+while digit1 <= 8:
+    while digit2 <= 9:
+        if digit1 != digit2:
+            print("{:d}".format(digit1), end='')
+            if digit1 != 8:
+                print("{:d}, ".format(digit2), end='')
+            else:
+                print("{:d}".format(digit2))
+        digit2 += 1
+    digit2 = digit1 + 1
+    digit1 = digit1 + 1
