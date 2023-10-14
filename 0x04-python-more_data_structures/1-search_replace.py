@@ -1,8 +1,4 @@
 def search_replace(my_list, search, replace):
-    new_list = []
-    for item in my_list:
-        if item == search:
-            new_list.append(replace)
-        else:
-            new_list.append(item)
-    return new_list
+    def new_function(item):
+        return replace if item == search else item
+    return list(map(new_function, my_list))
