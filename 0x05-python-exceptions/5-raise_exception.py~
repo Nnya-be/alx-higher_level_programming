@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+def raise_exception():
+    class MyException(Exception):
+        pass
+    raise MyException(TypeError)
