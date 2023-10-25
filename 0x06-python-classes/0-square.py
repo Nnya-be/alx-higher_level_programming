@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
 class Square:
-    """Class Square with no Attribut nor method""" 
+    """Class Square""" 
     pass
 
