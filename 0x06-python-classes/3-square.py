@@ -35,5 +35,4 @@ class Square:
         Return:
             return the current square area.
         """
-        if (self.__size):
-            return self.__size ** 2
+        return self.__size ** 2
