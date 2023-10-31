@@ -3,6 +3,6 @@
 
 
 class Rectangle:
-    """Rectangle class definition and all its methods and attributes.
-    """
+    """Rectangle class definition and all its methods and attributes."""
+
     pass
