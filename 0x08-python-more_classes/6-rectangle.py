@@ -3,9 +3,9 @@
 
 
 class Rectangle:
-    number_of_instances = 0
-
     """Rectangle class definition and all its methods and attributes."""
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Initialize the Rectangle class right after it is called.
