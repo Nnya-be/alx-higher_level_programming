@@ -90,7 +90,7 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        """Calculate the value of the area of the rectangle
+        """Calculate the value of the area of the rectangle.
 
         Args:
         None
@@ -101,7 +101,7 @@ class Rectangle:
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Calculate the value of the perimeter of the rectangle
+        """Calculate the value of the perimeter of the rectangle.
 
         Args:
         None
