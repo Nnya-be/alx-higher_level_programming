@@ -1,0 +1,38 @@
+The ``2-matrix_divided`` module
+====================================
+
+Using ``matrix_divided``
+------------------------------------
+
+Import matrix_divided from 2-matrix_divided
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Case 1 - only one List as an argument
+
+    >>> matrix_divided([1, 2, 3], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 2 - zero Division
+
+    >>> matrix_divided([[1, 2, 3], [2, 6, 9]], 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: division by zero
+
+Case 3 - Boolean division
+
+    >>> matrix_divided([[1, 2, 3], [2, 6, 9]], True)
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Case 4 - Boolean as an Argument
+
+    >>> matrix_divided(True, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    
