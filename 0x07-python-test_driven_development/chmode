@@ -1,0 +1,4 @@
+#!/bin/bash
+chmod +x ./*.py
+
+echo "Done making all the files executables"
