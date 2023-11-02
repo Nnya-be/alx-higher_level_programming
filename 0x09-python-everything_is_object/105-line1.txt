@@ -1,0 +1,2 @@
+0
+Because the small integer objects int the range of -5 to 256 and 0 are already preallocat3ed and remain in memory from the start of the session.
