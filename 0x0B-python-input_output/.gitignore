@@ -4,3 +4,5 @@ __pycache__
 *.py~
 *.py'
 *'
+*-main.py
+*main.py
