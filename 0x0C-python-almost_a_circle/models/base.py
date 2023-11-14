@@ -6,8 +6,9 @@ class Base:
     """Class Base."""
 
     __nb_objects = 0
+
     def __init__(self, id=None):
-        """Base Constructor."""
+        """Class Base Constructor."""
         if id is not None:
             self.__validate_id(id)
             self.id = id
