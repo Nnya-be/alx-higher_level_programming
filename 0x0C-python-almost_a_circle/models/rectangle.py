@@ -2,6 +2,7 @@
 """Rectangle Model."""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Class Rectangle Implementation."""
 
