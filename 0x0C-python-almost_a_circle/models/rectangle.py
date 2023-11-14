@@ -2,7 +2,6 @@
 """Rectangle Model."""
 from models.base import Base
 
-
 class Rectangle(Base):
     """Class Rectangle Implementation."""
 
@@ -17,30 +16,10 @@ class Rectangle(Base):
         id(int): Positive integer.
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
-
-    @property
-    def get_width(self):
-        """Return private attribute width."""
-        return self.__width
-
-    @property
-    def get_height(self):
-        """Return private attribute height."""
-        return self.__height
-
-    @property
-    def get_x(self):
-        """Return private attribute x."""
-        return self.__x
-
-    @property
-    def get_y(self):
-        """Return private attribute y."""
-        return self.__y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -75,6 +54,7 @@ class Rectangle(Base):
     def x(self, x):
         """Setter for x."""
         self.__validate_int("x", x)
+        self.__validate_non_negative("x", x)
         self.__x = x
 
     @property
@@ -86,6 +66,7 @@ class Rectangle(Base):
     def y(self, y):
         """Setter for y."""
         self.__validate_int("y", y)
+        self.__validate_non_negative("y", y)
         self.__y = y
 
     def __validate_int(self, name, value):
@@ -95,5 +76,10 @@ class Rectangle(Base):
 
     def __validate_positive(self, name, value):
         """Validate that the value is positive."""
+        if value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
+    def __validate_non_negative(self, name, value):
+        """Validate that the value is non-negative."""
         if value < 0:
-            raise ValueError(f"{name} must be a positive integer")
+            raise ValueError(f"{name} must be >= 0")
