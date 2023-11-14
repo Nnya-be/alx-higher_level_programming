@@ -23,7 +23,8 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self):
-       return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        """Representation of the class."""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     @property
     def width(self):
