@@ -106,7 +106,7 @@ class Rectangle(Base):
     def update(self, *args):
         """Assign args to attributes in order."""
         if len(args) >= 1:
-            self.__id = args[0]
+            super().__init__(args[0])
         if len(args) >= 2:
             self.__width = args[1]
         if len(args) >= 3:
