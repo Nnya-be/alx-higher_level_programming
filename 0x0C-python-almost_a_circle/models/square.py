@@ -42,7 +42,7 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-     
+
     def __str__(self):
         """Representation String of the Square."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
