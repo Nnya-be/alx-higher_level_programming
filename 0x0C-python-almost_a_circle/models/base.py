@@ -64,11 +64,11 @@ class Base:
     def create(cls, **dictionary):
         """Create an instance with attributes set from a dictionary."""
         if cls.__name__ == "Rectangle":
-            dummy_instance = cls(1, 1)  # Create a dummy Rectangle instance
+            dummy_instance = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy_instance = cls(1)  # Create a dummy Square instance
+            dummy_instance = cls(1)
         else:
             return None
 
-        dummy_instance.update(**dictionary)  # Update dummy instance with real values
+        dummy_instance.update(**dictionary)
         return dummy_instance
