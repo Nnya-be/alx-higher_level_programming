@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Base Model."""
+import json
 
 
 class Base:
@@ -20,3 +21,11 @@ class Base:
         """Validate that id is a positive integer."""
         if not isinstance(id, int) or id <= 0:
             raise ValueError("id must be a positive integer")
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Convert a list of dictionaries to a JSON string."""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+
+        return json.dumps(list_dictionaries)
