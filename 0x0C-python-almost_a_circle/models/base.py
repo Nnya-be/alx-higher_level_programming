@@ -90,3 +90,47 @@ class Base:
 
         list_dicts = cls.from_json_string(json_string)
         return [cls.create(**d) for d in list_dicts]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save a list of objects to a CSV file."""
+        if list_objs is None:
+            list_objs = []
+
+        # Get the class name
+        class_name = cls.__name__
+
+        # Build the filename
+        filename = f"{class_name}.csv"
+
+        with open(filename, 'w', newline='') as file:
+            csv_writer = csv.writer(file)
+            for obj in list_objs:
+                if class_name == "Rectangle":
+                    csv_writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif class_name == "Square":
+                    csv_writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load instances from a CSV file."""
+        # Get the class name
+        class_name = cls.__name__
+
+        # Build the filename
+        filename = f"{class_name}.csv"
+
+        try:
+            with open(filename, 'r', newline='') as file:
+                csv_reader = csv.reader(file)
+                instances = []
+                for row in csv_reader:
+                    if class_name == "Rectangle":
+                        instance = cls(int(row[0]), int(row[1]), int(row[2]), int(row[3]), int(row[4]))
+                    elif class_name == "Square":
+                        instance = cls(int(row[0]), int(row[1]), int(row[2]), int(row[3]))
+                    instances.append(instance)
+        except FileNotFoundError:
+            return []
+
+        return instances
