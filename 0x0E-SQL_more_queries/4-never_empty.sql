@@ -1,5 +1,4 @@
--- Creates the table id_not_null on the server.
-CREATE TABLE IF NOT EXISTS id_not_null(
+-- Create the table id_not_null on the server.
+CREATE TABLE IF NOT EXISTS id_not_null (
        id INT DEFAULT 1,
-       name VARCHAR(256)
-);
+       name VARCHAR(256));
