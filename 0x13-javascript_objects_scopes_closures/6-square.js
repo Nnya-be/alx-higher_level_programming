@@ -1,17 +1,18 @@
 #!/usr/bin/node
-class Square extends require('./5-square.js')
-{
+const Square1 = require('./5-square.js');
+class Square extends Square1 {
   constructor(size) {
     super(size);
   }
 
   charPrint(c) {
     if (c === undefined) {
-      c = 'X';
+      this.print();
     }
-    
-    for (let i = 0; i < this.size; i++) {
-      console.log("h");
+    else {
+      for (let i = 0; i < this.width; i++) {
+        console.log(c.repeat(this.height));
+      }
     }
   }
 }
