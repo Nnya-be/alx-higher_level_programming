@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-"""
-Query for a state in the argument.
-"""
-import MySQLdb
+"""Script for filtering the states."""
 import sys
+import MySQLdb
+
+
+def search_states(username, password, database, state_name):
+    """Determine for making the query."""
+    connection = MySQLdb.connect(host="localhost", port=3306, user=username,
+                                 passwd=password, db=database)
+    cursor = connection.cursor()
+
+    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    cursor.execute(query, (state_name,))
+    states = cursor.fetchall()
+
+    for state in states:
+        print(state)
+
+    cursor.close()
+    connection.close()
+
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    pas = sys.argv[2]
-    dbn = sys.argv[3]
-    statex = sys.argv[4]
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=username, passwd=pas, db=dbn)
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name='{:s}' ORDER BY states.id"
-                .format(statex))
-    rows = cur.fetchall()
-    for row in rows:
-        if row[1] == statex:
-            print(row)
-    cur.close()
-    db.close()
+    username, password = sys.argv[1], sys.argv[2]
+    database, state_name = sys.argv[3], sys.argv[4]
+    search_states(username, password, database, state_name)
