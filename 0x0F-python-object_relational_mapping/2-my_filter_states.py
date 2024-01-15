@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Query for a state in the argument."""
-import sys
 import MySQLdb
+import sys
 
 if __name__ == '__main__':
     name = sys.argv[1]
@@ -11,8 +11,8 @@ if __name__ == '__main__':
     connection = MySQLdb.connect(host="localhost", port=3306,
                                  user=name, passwd=pasword, db=dbname)
     cursor = connection.cursor()
-    cursor.execute(f"SELECT * FROM states WHERE name={state}
-                   ORDER BY states.id")
+    cursor.execute("SELECT * FROM states WHERE name='{:s}'
+                   ORDER BY states.id".format(state))
     info = cursor.fetchall()
     for my_state in info:
         print(my_state)
