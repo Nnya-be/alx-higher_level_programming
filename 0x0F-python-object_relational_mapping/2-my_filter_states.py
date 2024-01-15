@@ -3,7 +3,7 @@
 import MySQLdb
 import sys
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     name = sys.argv[1]
     pasword = sys.argv[2]
     dbname = sys.argv[3]
@@ -15,7 +15,8 @@ if __name__ == '__main__':
                    ORDER BY states.id".format(state))
     info = cursor.fetchall()
     for my_state in info:
-        print(my_state)
+        if my_state[1] == state:
+            print(my_state)
 
     cursor.close()
     connection.close()
