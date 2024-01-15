@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Query for a state in the argument."""
+"""
+Query for a state in the argument.
+"""
 import MySQLdb
 import sys
 
