@@ -6,19 +6,18 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    name = sys.argv[1]
-    pasword = sys.argv[2]
-    dbname = sys.argv[3]
-    state = sys.argv[4]
-    connection = MySQLdb.connect(host="localhost", port=3306,
-                                 user=name, passwd=pasword, db=dbname)
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM states WHERE name='{:s}'
-                   ORDER BY states.id".format(state))
-    info = cursor.fetchall()
-    for my_state in info:
-        if my_state[1] == state:
-            print(my_state)
-
-    cursor.close()
-    connection.close()
+    username = sys.argv[1]
+    pas = sys.argv[2]
+    dbn = sys.argv[3]
+    statex = sys.argv[4]
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=pas, db=dbn)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states WHERE name='{:s}' ORDER BY states.id"
+                .format(statex))
+    rows = cur.fetchall()
+    for row in rows:
+        if row[1] == statex:
+            print(row)
+    cur.close()
+    db.close()
