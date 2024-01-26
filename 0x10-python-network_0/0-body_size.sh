@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #Writes the content of a request lenght.
 
 url=$1
