@@ -4,7 +4,7 @@ const request = require('request');
 
 const apiUrl = process.argv[2];
 
-function countMoviesWithCharacter(apiUrl, characterId) {
+function countMoviesWithCharacter (apiUrl, characterId) {
   return new Promise((resolve, reject) => {
     request(apiUrl, (error, response, body) => {
       if (error) {
@@ -20,7 +20,7 @@ function countMoviesWithCharacter(apiUrl, characterId) {
         }, 0);
         resolve(count);
       } else {
-        reject('Invalid API response');
+        reject(new Error('Invalid API response'));
       }
     });
   });
